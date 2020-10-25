@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using App.Enums;
+﻿using App.Enums;
 using App.Models;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace App
 {
@@ -52,7 +46,7 @@ namespace App
         {
             string message = string.Empty;
 
-            GetMessage(txtKenobiM.Text.Split(','), txtSkywalkerM.Text.Split(','), txtSatoM.Text.Split(','), out message);
+            GetMessage(txtKenobiM.Text.Replace("\"","").Split(','), txtSkywalkerM.Text.Replace("\"", "").Split(','), txtSatoM.Text.Replace("\"", "").Split(','), out message);
 
             lblMessage.Text = message;
         }
